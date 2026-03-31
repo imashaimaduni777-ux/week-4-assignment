@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean Assignment</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<h1 class="text-center mt-4 fw-bold">Boolean Checker</h1>
+
+<div class="container text-center">
+
+    <!-- Inputs -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-4">
+            <input type="text" id="number_1" class="form-control shadow-sm" placeholder="Enter first value">
+        </div>
+
+        <div class="col-4">
+            <input type="text" id="number_2" class="form-control shadow-sm" placeholder="Enter second value">
+        </div>
+    </div>
+
+    <!-- Button -->
+    <div class="row justify-content-center mt-4">
+        <button type="button" class="btn btn-primary col-3 shadow" id="button_sum">
+            Check
+        </button>
+    </div>
+
+    <!-- Result -->
+    <div class="row justify-content-center mt-4">
+        <button id="result" class="btn btn-secondary col-3 shadow">
+            Result
+        </button>
+    </div>
+
+</div>
+
+<script>
+document.getElementById("button_sum").onclick = function () {
+
+    let number_1 = document.getElementById("number_1").value;
+    let number_2 = document.getElementById("number_2").value;
+
+    console.log("number_1 =", number_1, "type =", typeof number_1);
+    console.log("number_2 =", number_2, "type =", typeof number_2);
+
+    let result;
+
+    if (number_1 === number_2) {
+        result = true;
+    } else {
+        result = false;
+    }
+
+    console.log("result =", result, "type =", typeof result);
+
+    let resultBtn = document.getElementById("result");
+
+    // show result
+    resultBtn.textContent = result;
+
+    // change color
+    if (result == true) {
+        resultBtn.className = "btn btn-success col-3 shadow fw-bold";
+    } else {
+        resultBtn.className = "btn btn-danger col-3 shadow fw-bold";
+    }
+}
+</script>
+
+</body>
+</html>
